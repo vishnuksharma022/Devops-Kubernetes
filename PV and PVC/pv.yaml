@@ -1,0 +1,20 @@
+kind: PersistentVolume
+apiVersion: v1
+metadata:
+  name: devops-pv
+  namespace: default
+  labels:
+    papa: dondhu
+spec:
+  storageClassName: devops
+  accessModes:
+  - ReadWriteOnce
+  azureFile:
+    secretName: azure-secret
+    shareName: vishnuaksdev
+  capacity:
+    storage: 5Gi
+  persistentVolumeReclaimPolicy: Retain
+  
+
+

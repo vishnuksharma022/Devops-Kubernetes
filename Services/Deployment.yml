@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: vishnudeployment
+  labels:
+    app: deployment
+spec:
+  replicas: 4
+  selector:
+    matchExpressions:
+    - key: team
+      operator: In
+      values: 
+      - devops-front
+  template:
+    metadata:
+      labels:
+        team: devops-front
+    spec:
+      containers:
+      - image: nginx
+        name: nginx
+
