@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: devops-deployment
+  namespace: devops
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      team: devops
+  template:
+    metadata:
+      labels:
+        team: devops
+    spec:
+      containers:
+      - image: nginx
+        name: devops
+        ports:
+        - containerPort: 80
+        resources:
+          requests:
+            cpu: 100m
+            memory: 200Mi
+          limits:
+            cpu: 100m
+            memory: 200Mi

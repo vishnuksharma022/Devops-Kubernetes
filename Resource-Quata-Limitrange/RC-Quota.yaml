@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: ResourceQuota
+metadata:
+  name: devops-resource-quota
+  namespace: devops
+spec:
+  hard:
+    cpu: 500m
+    memory: 800Mi
+    pods: 10
+    services: 4
+    
